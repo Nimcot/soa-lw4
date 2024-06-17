@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecaster - Error</title>
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body class="h-100 d-flex flex-column">
+    <header>
+        <!-- Logo and Search -->
+        <nav id="heading" class="navbar py-0">
+            <div class="container-fluid">
+                <div class="d-block d-sm-none"></div>
+                <img style="width: 48px; z-index: 1" th:src="@{/img/logo.png}" alt="...">
+                <h3 class="ms-3 me-auto me-lg-1 d-none d-sm-inline">Forecaster</h3>
+                <h5 class="ms-1 me-auto d-none d-lg-inline"> - utilising OpenWeatherAPI</h5>
+                <form id="search" class="col-10 col-sm-7 col-lg-5 me-md-3 d-flex"
+                      role="search" method="post" action="/" style="max-width: 565px">
+                    <input type="text" class="form-control rounded-end-0" aria-label="Search"
+                           name="city" placeholder="Enter city name to search">
+                    <div class="my-1 my-lg-0" style="height: 56px"></div>
+                </form>
+            </div>
+        </nav>
+        <!-- Page Selection -->
+        <nav class="navigation py-0 px-3 d-flex justify-content-center">
+            <div style="height: 49px"></div>
+        </nav>
+    </header>
+    <main>
+        <!-- Website blocks -->
+        <div id="display" class="container row my-sm-3 mx-auto py-3 py-sm-4 py-lg-5 px-0">
+            <div id="weather-notfound">
+                <img th:src="@{/img/error.png}" alt="..." class="me-5 me-sm-3 me-md-4">
+                <h3>Oops, invalid search request!</h3>
+                <h5>Please enter a different location</h5>
+            </div>
+        </div>
+    </main>
+    <!-- Scripts -->
+    <script type="module" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script type="module" th:src="@{/js/jquery-latest.js}"></script>
+    <script type="module" th:src="@{/js/jquery-ui.min.js}"></script>
+    <script type="module" th:src="@{/js/lib.js}"></script>
+    <script type="module" th:src="@{/js/main.js}"></script>
+</body>
+</html>

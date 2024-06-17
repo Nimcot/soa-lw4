@@ -1,0 +1,113 @@
+body {
+    min-width: 150px;
+    background-color: rgb(31, 32, 37);
+}
+#heading {
+    background-color: rgb(35, 38, 46);
+}
+#heading > div > div {
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 64px;
+    position: absolute;
+    background-color: rgb(48, 41, 49);
+}
+#heading img {
+    margin: 8px 0;
+    transition: transform 0.5s;
+}
+#heading h3 {
+    color: rgb(238, 217, 224);
+    text-shadow: 1px 1px 0 rgb(85, 85, 85);
+}
+#heading h5 {
+    color: rgb(190, 147, 153);
+    text-shadow: 1px 1px 2px rgb(8, 8, 8);
+}
+#search input {
+    min-width: 63px;
+    margin: 8px 0 8px 18px;
+    border: none;
+    background-color: rgb(50, 56, 68);
+    color: rgb(217, 228, 235);
+    transition: 0.2s;
+}
+#search input:focus {
+    box-shadow: none;
+    outline: rgba(128, 165, 233, 0.3) solid 5px;
+}
+.form-control::placeholder {
+    color: rgb(166, 175, 180);
+    opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+    color: rgb(166, 175, 180);
+}
+.form-control::-ms-input-placeholder {
+    color: rgb(166, 175, 180);
+}
+.form-control::-webkit-input-placeholder {
+    color: rgb(166, 175, 180);
+}
+.navigation {
+    border-top: 1px solid rgb(63, 63, 63);
+    border-bottom: 1px solid rgb(63, 63, 63);
+    background-color: rgb(29, 28, 32);
+}
+.navigation button {
+    margin: 0;
+    border-radius: 0;
+}
+.navigation button:hover {
+    background-color: rgb(56, 54, 63);
+}
+#today-tab {
+    pointer-events: none;
+    border-left: 1px solid rgb(90, 88, 94);
+    border-right: 1px solid rgb(90, 88, 94);
+    border-bottom: 2px solid rgb(235, 77, 103);
+}
+#forecast-tab {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+#display > div {
+    border: 2px solid rgb(39, 42, 49);
+    outline: 1px solid rgb(36, 38, 44);
+    box-shadow: 0 3px 2px #2f323b;
+    border-radius: .25rem;
+    overflow: hidden;
+    display: none;
+}
+#weather-notfound {
+    margin: 0 12.5%;
+    width: 75%;
+    min-width: 169px;
+    background-color: rgb(50, 51, 59);
+    border-radius: 0 !important;
+}
+#weather-notfound > img {
+    width: 10%;
+    min-width: 40px;
+    float: left;
+}
+#weather-notfound > h3 {
+    margin-top: 8px;
+    font-family: 'Georgia';
+    color: rgb(237, 238, 238);
+}
+#weather-notfound > h5 {
+    margin: 16px 0;
+    font-family: 'Trebuchet MS';
+    color: rgb(172, 165, 167);
+}
+footer {
+    background-color: rgb(194, 203, 214);
+    display: none;
+}
+footer > div {
+    color: rgb(73, 73, 73);
+    display: none;
+}

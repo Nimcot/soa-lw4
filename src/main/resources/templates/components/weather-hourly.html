@@ -1,0 +1,42 @@
+<link rel="stylesheet" th:href="@{/css/weather-hourly.css}">
+<div id="weather-hourly" class="col-lg-7 mt-3 mt-sm-4 mt-lg-0 ms-auto p-0">
+    <h4 class="mb-2 ms-2">HOURLY</h4>
+    <div></div>
+    <table class="weather-hourly-table text-center text-nowrap overflow-x-scroll"
+           th:each="day, iter : ${weatherForecast.daily}" th:if="${iter.index < 5}" th:id="|day-${iter.index + 1}-table|">
+        <tbody th:with="padder='<td class=&quot;p-0&quot;><div style=&quot;width: ' + ((8 - ${day.hourly.size()}) * 78 + 13) + 'px&quot;></div></td>'">
+        <tr class="no-bottom-border">
+            <td><h5>[[${day.weekday}]]</h5></td>
+            <td th:each="hour : ${day.hourly}">[[${hour.time}]]</td>
+            [(${padder})]
+        </tr>
+        <tr class="no-bottom-border">
+            <td></td>
+            <td th:each="hour : ${day.hourly}" class="text-center">
+                <img th:src="@{/img/weather_icons/{filename}.png(filename=${hour.icon})}" alt="..."/>
+            </td>
+            [(${padder})]
+        </tr>
+        <tr>
+            <td><h6>Forecast</h6></td>
+            <td th:each="hour : ${day.hourly}">[[${hour.condition}]]</td>
+            [(${padder})]
+        </tr>
+        <tr>
+            <td><h6>Temp (°C)</h6></td>
+            <td th:each="hour : ${day.hourly}">[[${hour.temperature}]]</td>
+            [(${padder})]
+        </tr>
+        <tr>
+            <td><h6>RealFeel</h6></td>
+            <td th:each="hour : ${day.hourly}">[[${hour.feelsLike}]]</td>
+            [(${padder})]
+        </tr>
+        <tr>
+            <td><h6>Wind (km/h)</h6></td>
+            <td th:each="hour : ${day.hourly}">[[${hour.wind.speed}]] [[${hour.wind.direction}]]</td>
+            [(${padder})]
+        </tr>
+        </tbody>
+    </table>
+</div>
