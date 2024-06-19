@@ -145,8 +145,8 @@ public class Home {
         if (index >= weatherForecast.daily.size())
           weatherForecast.daily.add(new Daily() {{
             var dateTime = LocalDateTime.ofEpochSecond(hour.prop("dt").asLong() + offsetUnix, 0, ZoneOffset.UTC);
-            weekday = dayNames[dateTime.getDayOfWeek().get(ChronoField.DAY_OF_WEEK)];
-            weekdayShort = dayShortNames[dateTime.getDayOfWeek().get(ChronoField.DAY_OF_WEEK)];
+            weekday = dayNames[dateTime.getDayOfWeek().get(ChronoField.DAY_OF_WEEK) - 1];
+            weekdayShort = dayShortNames[dateTime.getDayOfWeek().get(ChronoField.DAY_OF_WEEK) - 1];
             date = dateFormat.format((hour.prop("dt").asLong() + offsetUnix) * 1000);
             dateShort = monthNames[dateTime.getMonthValue() - 1] + ' ' + dateTime.getDayOfMonth();
             hourly = new ArrayList<>();
